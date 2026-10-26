@@ -1,0 +1,44 @@
+{
+  "name": "dsh-web-search-brave",
+  "version": "0.1.0",
+  "description": "Brave Web Search provider for the DeepSeek Harness (DSH) web seam: adds a `brave` search backend to ctx.web",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "bundle",
+    "brave",
+    "brave-search",
+    "web-search"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "license": "MIT",
+  "author": "tianc43",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianc43/dsh-web-search-brave.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tianc43/dsh-web-search-brave/issues"
+  },
+  "homepage": "https://github.com/tianc43/dsh-web-search-brave#readme",
+  "scripts": {
+    "test": "node test/live-search.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

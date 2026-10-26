@@ -1,0 +1,25 @@
+# Brave Web Search bundle layer.
+#
+# 1. Pin the web seam to the `brave` provider this bundle registers.
+#    `fetchProvider: http` is restated because this row replaces the base
+#    layer's `web` config section.
+# 2. Mount the provider itself.
+#
+# The API key is NOT stored here or anywhere in this repository: the provider
+# resolves the `BRAVE_API_KEY` credential reference on every search.
+#
+# Machine-specific settings (a proxy, a different credential name, result
+# count, ...) belong in the profile's own `cordis.patch.yml`, for example:
+#
+#   - id: web-search-brave
+#     config:
+#       proxy: http://127.0.0.1:7890
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: brave
+    fetchProvider: http
+
+- insert:
+    - id: web-search-brave
+      name: dsh-web-search-brave
